@@ -46,17 +46,15 @@ export default class Grid extends React.Component{
         <div className='grid__pokemon'>
           {
             this.filter = search ? (
-              this.state.pokemons.filter(pokemon=> pokemon.name.indexOf(search) !== -1)
+              this.state.pokemons.filter(pokemon=> pokemon.name.indexOf(search.toLowerCase()) !== -1)
               .map(pokemon=> (
                 <Card key={pokemon.name} pokemon={pokemon}></Card>
-              ))
-              
+              )) 
             ): (
               this.state.pokemons.map(pokemon=> (
                 <Card key={pokemon.name} pokemon={pokemon}></Card>
               ))
             )
-            
           }
         </div>
         {
