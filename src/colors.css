@@ -1,4 +1,25 @@
 :root{
   --bg-light-color: #fff;
   --bg-dark-color: #000;
+  --bg-after-color: rgba(14, 12, 14, 0.6);
+  --bg-poke-color-light-normal: rgba(247, 243, 233, 0.928);
+  --bg-poke-color-light-fighting: rgba(247, 239, 233, 0.928);
+  --bg-poke-color-light-flying: rgba(247, 233, 242, 0.928);
+  --bg-poke-color-light-poison: rgba(242, 233, 247, 0.928);
+  --bg-poke-color-light-ground: rgba(233, 235, 247, 0.928);
+  --bg-poke-color-light-rock: rgba(194, 189, 189, 0.928);
+  --bg-poke-color-light-bug: rgba(247, 233, 241, 0.928);
+  --bg-poke-color-light-ghost: rgba(247, 243, 233, 0.823);
+  --bg-poke-color-light-steel: rgba(247, 243, 233, 0.928);
+  --bg-poke-color-light-fire: rgba(247, 233, 233, 0.928);
+  --bg-poke-color-light-water: rgba(176, 224, 238, 0.928);
+  --bg-poke-color-light-grass: rgba(233, 247, 239, 0.928);
+  --bg-poke-color-light-electric: rgba(247, 245, 233, 0.928);
+  --bg-poke-color-light-psychic: rgba(247, 243, 233, 0.928);
+  --bg-poke-color-light-ice: rgba(233, 238, 247, 0.928);
+  --bg-poke-color-light-dragon: rgba(247, 235, 233, 0.928);
+  --bg-poke-color-light-dark: rgba(148, 147, 144, 0.928);
+  --bg-poke-color-light-fairy: rgba(245, 247, 233, 0.928);
+  --bg-poke-color-light-unknown: rgba(247, 243, 233, 0.928);
+  --bg-poke-color-light-shadow: rgba(247, 233, 243, 0.928);
 }
