@@ -1,6 +1,6 @@
 @import url('./colors.css');
 
-*,:before,:after{
+*,::before,::after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,20 +8,19 @@
 
 body{
   background-color: var(--bg-light-color);
+  position: relative;
 }
 
 .container{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.container{
   padding: 0 50px;
 }
 
 .navbar{
   padding: 20px 0;
+  margin-bottom: 30px;
 } 
 
 .navbar__title{
@@ -36,6 +35,7 @@ body{
   padding: 10px;
   border-color: 1px solid black;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .search__wrapper{
@@ -72,9 +72,9 @@ body{
 .grid__pokemon{
   /* display: block; */
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: repeat(4, 1fr); */
+  gap: 30px;
   padding: 10px;
 }
 
@@ -100,7 +100,48 @@ body{
 }
 
 .card{
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  /* background-color: rgba(0, 0, 0, 0.779); */
+  /* color: white; */
+  /* background: rgb(18,201,33);
+  background: linear-gradient(90deg, rgba(18,201,33,0.8379726890756303) 0%, rgba(0,212,255,1) 100%); */
+  /* background-color: rgba(233, 247, 240, 0.928); */
+}
+
+.card:hover{
+  cursor: pointer;
+}
+
+.modal{
+  background-color: black;
+  position: fixed;
+  top: 25%;
+  bottom: 25%;
+  left: 35%;
+  right: 35%;
+  color: white;
+  padding: 20px;
+  z-index: 10;
+}
+
+.dark::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-after-color);
+}
+
+.modal__close{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .footer{
@@ -117,19 +158,19 @@ body{
   }
 }
 
-@media only screen and (max-width: 740px){
+@media only screen and (max-width: 940px){
   .grid__pokemon{
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 670px){
   .grid__pokemon{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 600px){
   .grid__pokemon{
     grid-template-columns: 1fr;
   }

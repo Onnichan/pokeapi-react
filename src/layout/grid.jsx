@@ -8,7 +8,8 @@ export default class Grid extends React.Component{
     this.state = {
       pokemons: [],
       next: '',
-      previous: '', 
+      previous: '',
+   
     }
     this.handleButton = this.handleButton.bind(this);
   }
