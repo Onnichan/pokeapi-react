@@ -9,7 +9,7 @@
 body{
   background-color: var(--bg-light-color);
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .container{
@@ -36,11 +36,16 @@ body{
   padding: 10px;
   border-color: 1px solid black;
   width: 100%;
+  height: 60px;
+  /* min-height: 60px; */
   margin-bottom: 30px;
+  display: flex;
 }
 
 .search__wrapper{
-  width: 100%;
+  /* display: inline-block; */
+  width: 90%;
+  height: 100%;
   position: relative;
 }
 
@@ -48,8 +53,15 @@ body{
   outline: none;
   padding: 10px 40px;
   width: 100%;
-  border-radius: 4px;
+  height: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid black;
   color: lightseagreen;
+}
+
+.search__input:focus{
+  border: 1px solid gray;
 }
 
 .search__input::placeholder{
@@ -63,7 +75,20 @@ body{
   top: 25%;
   bottom: 25%;
   height: 50%;
+}
 
+.search__button{
+  display: block;
+  width: 10%;
+  height: 100%;
+  background-color: black;
+  border: 1px solid transparent;
+  font-weight: 700;
+  color: white;
+}
+
+.search__button:hover{
+  cursor: pointer;
 }
 
 .grid{
@@ -71,10 +96,9 @@ body{
 }
 
 .grid__pokemon{
-  /* display: block; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* grid-template-rows: repeat(4, 1fr); */
+  grid-template-rows: repeat(5, 1fr);
   gap: 30px;
   padding: 10px;
 }
@@ -103,18 +127,12 @@ body{
 
 .card{
   display: flex;
-  /* flex-direction: column; */
   align-items: flex-end;
   justify-content: space-around;
-  /* border: 1px solid black; */
   border-radius: 5px;
   position: relative;
-  /* background-color: rgba(0, 0, 0, 0.779); */
-  /* color: white; */
-  /* background: rgb(18,201,33);
-  background: linear-gradient(90deg, rgba(18,201,33,0.8379726890756303) 0%, rgba(0,212,255,1) 100%); */
-  /* background-color: rgba(233, 247, 240, 0.928); */
-  padding: 20px 0;
+  padding: 20px 0; /* rgba(233, 247, 239, 0.928); */
+  background-color: rgba(148, 147, 144, 0.27);
 }
 
 .card::after{
@@ -169,28 +187,44 @@ body{
   position: absolute;
   top: 0;
   right: 0;
-  background-color: rgb(231, 197, 181);
   padding: 2px 5px;
   border-radius: 5px;
   font-size: 0.8em;
-  min-width: 60px;
   text-align: center;
   color: rgba(0, 0, 0, 0.739);
   font-weight: 700;
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+}
+
+.card__badge-Icon{
+  display: inline-block;
+  margin-right: 10px;
+  width: 20%;
+  height: 100%;
+}
+
+.card__badge-text{
+  display: inline-block;
+  text-align: center;
 }
 
 .card__image{
   display: block;
   z-index: 2;
+  width: 40%;
+  height: 100%;
 }
 
 .modal{
-  background-color: black;
+  background-color: rgba(247, 242, 242, 0.961);
   position: fixed;
-  top: 20%;
+  top: 10%;
   left: 35%;
   right: 35%;
-  color: white;
+  color: black;
   z-index: 10;
   border-radius: 10px;
 }
@@ -207,11 +241,40 @@ body{
 }
 
 .modal__content-features{
-  background-color: lightseagreen;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-bottom: -94px;
   height: 150px;
+  font-size: 0.9em;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.modal__content-featuresHabitat{
+  width: 100%;
+  display: flex;
+}
+
+.modal__content-featuresImage{
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.modal__content-featuresRight,
+.modal__content-featuresLeft{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.modal__content-features span:not(.modal__content-featuresHabitat){
+  /* background-color: #e3d7b2; */
+  border-radius: 5px;
+  padding: 0 10px;
+  border: 1px solid black;
 }
 
 .modal__content-description{
@@ -224,6 +287,13 @@ body{
   display: block;
   width: 40%;
   margin-bottom: -10px;
+  border-radius: 50%;
+  background-color: rgba(247, 242, 242, 0.961);
+}
+
+.modal__content-descriptionTitle{
+  font-size: 1.4em;
+  text-transform: uppercase;
 }
 
 .modal__content-descriptionParagraph{
@@ -236,6 +306,66 @@ body{
   display: flex;
   justify-content: space-around;
   gap: 20px;
+}
+
+.modal__content-otherBreadcrumbAbility{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.modal__content-otherBreadcrumbAbilities{
+  margin-bottom: 10px;
+}
+
+.modal__content-otherStats{
+  width: 60%;
+}
+
+.modal__content-otherStatsTitle{
+  text-align: center;
+}
+
+.modal__content-otherStat{
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__content-otherStatContent{
+  font-size: 0.7em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__content-otherStatTimeLine{
+  background-color: gray;
+  width: 100%;
+  height: 0.4em;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+/* .modal__content-otherStatTimeLine::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: inherit;
+  border-radius: 5px;
+  background-color: black;
+  z-index: 10;
+} */
+
+.modal__content-otherStatTimeLineStat{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  border-radius: 5px;
+  background-color: black;
+  z-index: 10;
 }
 
 .dark::after{
@@ -251,8 +381,17 @@ body{
 
 .modal__close{
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -25px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  z-index: 11;
+  font-size: 1.1em;
+}
+
+.modal__close:hover{
+  cursor: pointer;
 }
 
 .footer{
@@ -263,31 +402,64 @@ body{
   text-align: center;
 }
 
-@media only screen and (max-width: 1000px){
-  .grid__pokemon{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media only screen and (max-width: 940px){
+@media only screen and (max-width: 1030px){
   .grid__pokemon{
     grid-template-columns: repeat(3, 1fr);
   }
+  .card__image{
+    width: 40%;
+    height: 100%;
+  }
+
+  .modal{
+    right: 27%;
+    left: 27%;
+  }
 }
 
-@media only screen and (max-width: 670px){
+@media only screen and (max-width: 760px){
   .grid__pokemon{
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .card__image{
+    width: 40%;
+  }
+
   .modal{
-    right: 10%;
-    left: 10%;
+    right: 15%;
+    left: 15%;
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 450px){
   .grid__pokemon{
     grid-template-columns: 1fr;
   }
 
+  .card__image{
+    width: 40%;
+    height: 100%;
+  }
+
+  .modal{
+    right: 18%;
+    left: 18%;
+  }
+}
+
+@media only screen and (max-width: 430px){
+  .grid__pokemon{
+    grid-template-columns: 1fr;
+  }
+
+  .card__image{
+    width: 40%;
+    height: 100%;
+  }
+
+  .modal{
+    right: 0;
+    left: 0;
+  }
 }
