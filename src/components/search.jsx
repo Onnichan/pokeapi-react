@@ -9,10 +9,18 @@ export default class Search extends React.Component{
       search: '',
     }
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleClickSearch = this.handleClickSearch.bind(this);
   }
 
   handleSearch(e){
-    this.props.onHandleSearch(e.target.value);
+    this.setState({
+      search: e.target.value,
+    })
+    if(e.target.value.length === 0) this.props.onHandleSearch(null);
+  }
+
+  handleClickSearch(){
+    this.props.onHandleSearch(this.state.search);
   }
 
   render(){
@@ -20,13 +28,14 @@ export default class Search extends React.Component{
       <div className='search'>
         <div className="search__wrapper">
           <input className='search__input' 
-            onChange={this.handleSearch} 
-            type="search" 
+            type="search"
+            onChange={this.handleSearch}
             placeholder='Search your pokemon ... 😏'
-            value={this.props.search}
+            autoFocus
           />
           <img className='search__icon' src={SearchIcon} alt="" />
         </div>
+        <button className='search__button' onClick={this.handleClickSearch}>{/* <i class="fas fa-search"></i> */}Click me 👀</button>
       </div>
     )
   }
