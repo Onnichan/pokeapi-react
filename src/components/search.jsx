@@ -35,7 +35,7 @@ export default class Search extends React.Component{
           />
           <img className='search__icon' src={SearchIcon} alt="" />
         </div>
-        <button className='search__button' onClick={this.handleClickSearch}>{/* <i class="fas fa-search"></i> */}Click me 👀</button>
+        <button className='search__button' onClick={this.handleClickSearch}>{/* <i class="fas fa-search"></i> */}Search</button>
       </div>
     )
   }
