@@ -33,8 +33,7 @@ export default class Grid extends React.Component{
     })
   }
   render(){
-    // console.log(this.props);
-    console.log(this.state.next);
+    
     return(
       <div className='grid'>
         <div className='grid__pokemon'>
