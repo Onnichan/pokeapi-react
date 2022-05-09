@@ -8,7 +8,7 @@ This aplication is created with the boilerplate [create-react-app](https://githu
 
 ## Screenshots
 
-Here some screenshots of the UI of this aplication. In fact, in below you will see some components that renderice pokemons.
+Here some screenshots of the UI of this aplication based on components shown below.
 
 ### Search Component
 ![Image](/src/assets/screenshots/search.PNG)
