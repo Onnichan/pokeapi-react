@@ -39,8 +39,8 @@ Just follow this steps:
 
   <li>Then you will have to type the following command, depending on what you have installed, npm or yarn.</li>
   
-  `npm install`<br /> 
-    or
+  `npm install`<br/>
+    or <br/>
   `yarn install`
   <li>and that's it! you can run it with the following command and view the application.</li>
 
@@ -49,6 +49,6 @@ Just follow this steps:
 
 
 ## Contact
-Linkedin: https://www.linkedin.com/in/walter-daniel-huaynapata-aguilar-391041197/
+You can follow me on my [Linkedin](https://www.linkedin.com/in/walter-daniel-huaynapata-aguilar-391041197/).
 
 
