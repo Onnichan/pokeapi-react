@@ -10,19 +10,19 @@ This aplication is created with the boilerplate [create-react-app](https://githu
 
 Here some screenshots of the UI of this aplication. In fact, in below you will see some components that renderice pokemons.
 
-###Search Component
+### Search Component
 ![Image](/src/assets/screenshots/search.PNG)
 
-###Grid Component
+### Grid Component
 
 ![Image](/src/assets/screenshots/grid.PNG)
 
-###Modal Component
+### Modal Component
 Charizard               |  Blastoise  |  Venusaur
 :-------------------------:|:-------------------------:|:-------------------------:
 ![Image](/src/assets/screenshots/card.PNG?raw=true) | ![Image](/src/assets/screenshots/card-blastoise.PNG?raw=true) | ![Image](/src/assets/screenshots/card-venasaur.PNG?raw=true)
 
-##Demo
+## Demo
 
 You can see it deployed [here](https://onnichan.github.io/pokeapi-react/) 👈
 
@@ -41,7 +41,7 @@ or
 
 and ready you can run it and view the application.
 
-##Contact
+## Contact
 Linkedin: https://www.linkedin.com/in/walter-daniel-huaynapata-aguilar-391041197/
 
 
