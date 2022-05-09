@@ -30,7 +30,7 @@ export default class App extends React.Component{
       searching: true,
     })
     const api = await fetch(`https://pokeapi.co/api/v2/pokemon/${textSearch}`);
-    const data = await api.json();
+    const data = await api.json().catch(()=> undefined);
     if(!data){
       this.setState({
         notFound: true,
@@ -84,7 +84,7 @@ export default class App extends React.Component{
             this.state.notFound ? (
               <div>'Pokemon not found'</div>
             ) : (
-              <Grid pokemons={this.state.pokemons} next={this.state.nextPokemon} previous={this.state.previous}/>
+              <Grid pokemons={this.state.pokemons} next={this.state.nextPokemon}/>
             )
           }
         </Container>
