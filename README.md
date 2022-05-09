@@ -1,14 +1,15 @@
 # POKEAPI ![Pokebola](https://cdn.emojidex.com/emoji/px32/Pokebola.png "Pokebola")
 
-This project use the api rest of [pokeapi](https://pokeapi.co/docs/v2) for show a pokedex with its descriptions and look for a pokemon by username.
+In this project we use a Pokedex to show the info of a pokemon, searching by its name. To get this info we use an API to bring the data from [pokeapi](https://pokeapi.co)
+
 
 ## Technologies
 
-This aplication is created with the boilerplate [create-react-app](https://github.com/facebook/create-react-app) of [ReactJS](https://reactjs.org/) v18, CSS and HTML.
+To build this app I used [ReactJS](https://reactjs.org/) v18, CSS, and HTML.
 
 ## Screenshots
 
-Here some screenshots of the UI of this aplication based on components shown below.
+Here are some screenshots of the app's UI based on the components shown below
 
 ### Search Component
 ![Image](/src/assets/screenshots/search.PNG)
@@ -26,22 +27,26 @@ Charizard               |  Blastoise  |  Venusaur
 
 You can see it deployed [here](https://onnichan.github.io/pokeapi-react/) 👈
 
-## How to use it?
+## Do you want to use or run this project locally?
 
-First, you can type the below in the console of your text editor: 
+Just follow this steps:
 
-`git init`
-`git clone https://github.com/Onnichan/pokeapi-react.git`
+<ul>
+  <li>In your system console write </li>
+  
+  `git init`<br/>
+  `git clone https://github.com/Onnichan/pokeapi-react.git`
 
-then you will have to type the following command in your console, depending it if you use npm or yarn.
+  <li>Then you will have to type the following command, depending on what you have installed, npm or yarn.</li>
+  
+  `npm install`<br /> 
+    or
+  `yarn install`
+  <li>and that's it! you can run it with the following command and view the application.</li>
 
-`npm install` 
-or
-`yarn install`
+  `npm start`
+</ul>
 
-and ready you can run it with the below command and view the application.
-
-`npm start`
 
 ## Contact
 Linkedin: https://www.linkedin.com/in/walter-daniel-huaynapata-aguilar-391041197/
