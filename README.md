@@ -26,7 +26,7 @@ Charizard               |  Blastoise  |  Venusaur
 
 You can see it deployed [here](https://onnichan.github.io/pokeapi-react/) 👈
 
-### How to use it?
+## How to use it?
 
 First, you can type the below in the console of your text editor: 
 
@@ -39,7 +39,9 @@ then you will have to type the following command in your console, depending it i
 or
 ### `yarn install`
 
-and ready you can run it and view the application.
+and ready you can run it with the below command and view the application.
+
+### `npm start`
 
 ## Contact
 Linkedin: https://www.linkedin.com/in/walter-daniel-huaynapata-aguilar-391041197/
