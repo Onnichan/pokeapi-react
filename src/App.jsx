@@ -12,24 +12,30 @@ export default class App extends React.Component{
     super(props);
     this.state = {
       pokemons: [],
-      nextPokemon: '',
+      total: 0,
       notFound: false,
+      search: [],
       searching: false,
     }
     this.handleSearch = this.handleSearch.bind(this);
     this.showPokemons = this.showPokemons.bind(this);
+    this.nextPokemon = this.nextPokemon.bind(this);
   }
 
   async handleSearch(textSearch){
     if(!textSearch) {
-      return this.showPokemons();
+      this.setState({
+        search: [],
+        notFound:false,
+      })
+      return;
     }
     
     this.setState({
       notFound: false,
       searching: true,
     })
-    const api = await fetch(`https://pokeapi.co/api/v2/pokemon/${textSearch}`);
+    const api = await fetch(`https://pokeapi.co/api/v2/pokemon/${textSearch.toLowerCase()}`);
     const data = await api.json().catch(()=> undefined);
     if(!data){
       this.setState({
@@ -38,7 +44,7 @@ export default class App extends React.Component{
       return;
     }else{
       this.setState({
-        pokemons: [data],
+        search: [data],
       })
     }
     this.setState({
@@ -46,13 +52,10 @@ export default class App extends React.Component{
     })
   }
 
-  async showPokemons(){
+  async showPokemons(limit = 20, offset = 0){
 
-    const api = await fetch('https://pokeapi.co/api/v2/pokemon');
+    const api = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
     const data = await api.json();
-    this.setState({
-      nextPokemon: data.next,
-    })
     const promises = await data.results.map(async pokemon => {
       const result = await fetch(pokemon.url);
       const res = await result.json();
@@ -61,10 +64,16 @@ export default class App extends React.Component{
 
     const results = await Promise.all(promises);
 
-    this.setState({
-      pokemons: results,
+    this.setState(prev => ({
+      search: [],
+      pokemons: [...prev.pokemons, ...results],
       notFound: false,
-    });  
+      total: prev.total + results.length,
+    }));  
+  }
+
+  nextPokemon(){
+    this.showPokemons(20,this.state.total);
   }
 
   componentDidMount(){
@@ -75,6 +84,7 @@ export default class App extends React.Component{
 
   render(){
     
+    const poke = this.state.search.length > 0 ? this.state.search : this.state.pokemons; 
     return (
       <>
         <Container>
@@ -84,7 +94,7 @@ export default class App extends React.Component{
             this.state.notFound ? (
               <div>'Pokemon not found'</div>
             ) : (
-              <Grid pokemons={this.state.pokemons} next={this.state.nextPokemon}/>
+              <Grid pokemons={poke} next={this.nextPokemon}/>
             )
           }
         </Container>

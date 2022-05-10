@@ -13,14 +13,19 @@ export default class Search extends React.Component{
   }
 
   handleSearch(e){
+   
     this.setState({
       search: e.target.value,
     })
-    if(e.target.value.length === 0) this.props.onHandleSearch(null);
+    if(e.target.value.length === 0) this.props.onHandleSearch(null); 
+    
   }
 
-  handleClickSearch(){
-    this.props.onHandleSearch(this.state.search);
+  handleClickSearch(e){
+    if(e.keyCode === 13 || e.type === 'click'){
+      e.preventDefault();
+      this.props.onHandleSearch(this.state.search);
+    }
   }
 
   render(){
@@ -31,11 +36,12 @@ export default class Search extends React.Component{
             type="search"
             onChange={this.handleSearch}
             placeholder='Search your pokemon ... 😏'
+            onKeyDown={this.handleClickSearch}
             autoFocus
           />
           <img className='search__icon' src={SearchIcon} alt="" />
         </div>
-        <button className='search__button' onClick={this.handleClickSearch}>{/* <i class="fas fa-search"></i> */}Search</button>
+        <button className='search__button' onClick={this.handleClickSearch}>Search</button>
       </div>
     )
   }
